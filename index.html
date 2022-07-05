@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>Master Project</title>
+</head>
+<body>
+
+    <div class="container shadow-lg p-3 mt-5 bg-body rounded" id="getinput">
+        <h1 class="mt-1 mb-4 text-center">KENYAN TAX</h1>
+        <div class="row justify-content-around mb-3">
+            <div class="col-4">
+              PAY PERIOD:
+            </div>
+            <div class="col-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="month" checked>
+                    <label class="form-check-label" for="inlineCheckbox1">MONTH</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="year">
+                    <label class="form-check-label" for="inlineCheckbox2">YEAR</label>
+                  </div>
+            </div>
+          </div>
+          
+          <div class="row justify-content-around mb-3">
+            <div class="col-4">
+              BASIC SALARY:
+            </div>
+            <div class="col-8">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="220,000">
+                    <span class="input-group-text">Ksh</span>
+                  </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-around mb-3">
+            <div class="col-4">
+              BENEFITS (BONUS, ALLOWANCE):
+            </div>
+            <div class="col-8">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="0">
+                    <span class="input-group-text">Ksh</span>
+                  </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-around mb-3">
+            <div class="col-4">
+              DEDUCT NSSF:
+            </div>
+            <div class="col-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="yes" checked>
+                    <label class="form-check-label" for="inlineCheckbox1">YES</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="no">
+                    <label class="form-check-label" for="inlineCheckbox2">NO</label>
+                  </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-around mb-3">
+            <div class="col-4">
+              NSSF RATES:
+            </div>
+            <div class="col-8">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="new" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        NEW NSSF RATES(TIERED)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="old" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                      OLD NSSF RATES (KSH 200)
+                    </label>
+                  </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-around mb-3">
+            <div class="col-4">
+              DEDUCT NHIF:
+            </div>
+            <div class="col-8">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="yes" checked>
+                    <label class="form-check-label" for="inlineCheckbox1">YES</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="no">
+                    <label class="form-check-label" for="inlineCheckbox2">NO</label>
+                  </div>
+            </div>
+          </div>
+
+          <div class="btn d-grid gap-2">
+            <button type="button" class="btn btn-success btn-lg">CALCULATE</button>
+          </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="./assets/main.js"></script>
+</body>
+</html>
