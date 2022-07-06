@@ -95,8 +95,8 @@ showResults = () => {
             } else {
                 pension = salary * 0.06;
             }
-            document.querySelector("#nssf").textContent = pension;
         }
+        document.querySelector("#nssf").textContent = pension;
         let postPensionDeduction = salary - pension;
         document.querySelector("#post-income").textContent = postPensionDeduction;
 
