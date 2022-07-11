@@ -26,7 +26,6 @@ basicSalary.addEventListener("focusout", (e) => {
 })
 
 benefits.addEventListener("focusout", (e) => {
-    console.log(e.target.value);
     ben = e.target.value;
 })
 
@@ -34,11 +33,17 @@ let nssf = document.querySelectorAll("#fourth .form-check .form-check-input");
 let deductnssf = true;
 
 for (let i = 0; i < nssf.length; i++) {
+            let nssfInput1 = document.querySelector("#fifth .form-check #flexCheckDefault");
+            let nssfInput2 = document.querySelector("#fifth .form-check #flexCheckChecked");
     nssf[i].addEventListener("change", (e) => {
         if (e.target.value == 'no') {
             deductnssf = false;
+            nssfInput1.disabled = true;
+            nssfInput2.disabled = true;
         } else {
             deductnssf = true;
+            nssfInput1.disabled = false;
+            nssfInput2.disabled = false;
         }
     })
 }
@@ -87,22 +92,27 @@ showResults = () => {
 
         var incomeTax = 0, taxableIncome = 0, pension = 0, personalRelief = 0, nhifValue = 0, monthlySal = 0;
 
-        if (old) {
-            pension = 200;
-        } else {
-            if (salary > 18000) {
-                pension = 2160;
+        if (deductnssf) {
+            if (old) {
+                pension = 200;
             } else {
-                pension = salary * 0.06;
+                if (salary > 18000) {
+                    pension = 1080;
+                } else {
+                    pension = salary * 0.06;
+                }
             }
+        } else {
+            pension = 0;
         }
+
         document.querySelector("#nssf").textContent = pension;
         let postPensionDeduction = salary - pension;
         document.querySelector("#post-income").textContent = postPensionDeduction;
 
         taxableIncome = salary + ben - pension;
         if (annual) {
-            monthlySal = salary /12;
+            monthlySal = salary / 12;
             personalRelief = 28800;
             taxableIncome -= personalRelief;
             if (taxableIncome <= 147580) {
@@ -154,7 +164,7 @@ showResults = () => {
             }
         } else {
             personalRelief = 2400;
-            taxableIncome -= personalRelief;
+            //taxableIncome -= personalRelief;
             if (taxableIncome <= 12298) {
                 incomeTax = taxableIncome * 0.1;
             } else if (taxableIncome <= 23885) {
@@ -204,10 +214,6 @@ showResults = () => {
                 nhifValue = 0;
             }
         }
-
-        
-
-
         let paye = incomeTax - personalRelief;
         document.querySelector("#taxable-income").textContent = taxableIncome;
         document.querySelector("#tax-on-taxable-income").textContent = incomeTax;
@@ -216,7 +222,7 @@ showResults = () => {
         document.querySelector("#paye").textContent = paye;
         document.querySelector("#chargeable").textContent = postPensionDeduction;
         document.querySelector("#nhif").textContent = nhifValue;
-        document.querySelector("#net-pay").textContent = postPensionDeduction - paye;
+        document.querySelector("#net-pay").textContent = postPensionDeduction - paye - nhifValue;
     } catch {
         console.log(new Error("Undefined Variables"));
     }
